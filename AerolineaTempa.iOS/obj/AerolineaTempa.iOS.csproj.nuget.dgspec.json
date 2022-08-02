@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj": {}
+  },
+  "projects": {
+    "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj",
+        "projectName": "AerolineaTempa.iOS",
+        "projectPath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj",
+        "packagesPath": "/Users/federico.sanchez/.nuget/packages/",
+        "outputPath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/federico.sanchez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/BroxelDev/_packaging/Broxel/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj": {
+                "projectPath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2012, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj",
+        "projectName": "AerolineaTempa",
+        "projectPath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj",
+        "packagesPath": "/Users/federico.sanchez/.nuget/packages/",
+        "outputPath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/federico.sanchez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/BroxelDev/_packaging/Broxel/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2012, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

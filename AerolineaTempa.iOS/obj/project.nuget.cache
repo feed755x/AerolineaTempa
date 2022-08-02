@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qn0on5yg65VqSeFSDDUh/9DH+d2GmCTzqmdTbgRZqui+/jLRqZme5GlSkXldtERQFMgJDEvBMzv4IK1rTvS2MQ==",
+  "success": true,
+  "projectFilePath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/federico.sanchez/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/federico.sanchez/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/federico.sanchez/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,15 @@
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/bin/Debug/netstandard2.0/AerolineaTempa.deps.json
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/bin/Debug/netstandard2.0/AerolineaTempa.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/bin/Debug/netstandard2.0/ref/AerolineaTempa.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/bin/Debug/netstandard2.0/AerolineaTempa.pdb
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.csproj.AssemblyReference.cache
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.GeneratedMSBuildEditorConfig.editorconfig
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.AssemblyInfoInputs.cache
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.AssemblyInfo.cs
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.csproj.CoreCompileInputs.cache
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/ref/AerolineaTempa.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.pdb
