@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a0nZ5bbfAqAbleua3w6SJAkK0o3aMiJHizIYfCJFyoAbtyPn20730aJF5dlgqV0Aj+9oSXDdTeQBXmI7tRxbnQ==",
+  "dgSpecHash": "iCdkNIG1DrBxv2CMk97gJF0V5KEax4p7vYenTHC8fGmHIPdjQuETuPpv6RM6NFvecP0RU5CNInmOqzKf6RK4jw==",
   "success": true,
   "projectFilePath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/AerolineaTempa.iOS.csproj",
   "expectedPackageFiles": [
+    "/Users/federico.sanchez/.nuget/packages/com.airbnb.ios.lottie/2.5.13/com.airbnb.ios.lottie.2.5.13.nupkg.sha512",
+    "/Users/federico.sanchez/.nuget/packages/com.airbnb.xamarin.forms.lottie/4.1.0/com.airbnb.xamarin.forms.lottie.4.1.0.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/xamarin.essentials/1.7.3/xamarin.essentials.1.7.3.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/xamarin.forms/5.0.0.2515/xamarin.forms.5.0.0.2515.nupkg.sha512"

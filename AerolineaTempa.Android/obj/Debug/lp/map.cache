@@ -102,3 +102,6 @@ androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
+Lottie.Android.dll
+Lottie.Forms.dll
+Square.OkIO.dll

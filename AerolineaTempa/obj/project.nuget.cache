@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "E9gYRh4wEIq6L5oCHLz7gWBGInjeksttB+ZTj7Ud84QpGxlgQ3ckAWfNketwZO8VIxWLrcAFgl6q/koAYhfGXg==",
+  "dgSpecHash": "DsXYDcjdNATVnVazJkdSTyTjWW0CPBJztqcja4ppS3yVpN4iWoFs5HdL/5PbQiABmIb/UFCinM+x/h+jCVzfPA==",
   "success": true,
   "projectFilePath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj",
   "expectedPackageFiles": [
+    "/Users/federico.sanchez/.nuget/packages/com.airbnb.xamarin.forms.lottie/4.1.0/com.airbnb.xamarin.forms.lottie.4.1.0.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
