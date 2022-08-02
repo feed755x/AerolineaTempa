@@ -1,6 +1,18 @@
 ﻿<Properties StartupConfiguration="{5C63B037-4111-4258-81C0-8672FC779156}|Default">
-  <MonoDevelop.Ide.ItemProperties.AerolineaTempa.iOS FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.AerolineaTempa.Android FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.AerolineaTempa FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AerolineaTempa" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AerolineaTempa.Android PreferredExecutionTarget="Android.9e8c44fb" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

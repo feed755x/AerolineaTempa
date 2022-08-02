@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "F19n2+klyyVv6HBXO5T2FlfbgMv6bTRNdZ+pp2Yv8Fp5vEzhClcEsgKbnjxu7+iji6Vu0u4c84fvETpm8x6ktg==",
+  "dgSpecHash": "E9gYRh4wEIq6L5oCHLz7gWBGInjeksttB+ZTj7Ud84QpGxlgQ3ckAWfNketwZO8VIxWLrcAFgl6q/koAYhfGXg==",
   "success": true,
   "projectFilePath": "/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/AerolineaTempa.csproj",
   "expectedPackageFiles": [
     "/Users/federico.sanchez/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/federico.sanchez/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
-    "/Users/federico.sanchez/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
-    "/Users/federico.sanchez/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "/Users/federico.sanchez/.nuget/packages/xamarin.essentials/1.7.3/xamarin.essentials.1.7.3.nupkg.sha512",
+    "/Users/federico.sanchez/.nuget/packages/xamarin.forms/5.0.0.2515/xamarin.forms.5.0.0.2515.nupkg.sha512"
   ],
   "logs": []
 }
