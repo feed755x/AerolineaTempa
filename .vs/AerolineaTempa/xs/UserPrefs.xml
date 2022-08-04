@@ -1,40 +1,48 @@
 ﻿<Properties StartupConfiguration="{5C63B037-4111-4258-81C0-8672FC779156}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AerolineaTempa/ViewModels/UserProfile/DetailFlightViewModel.cs">
-    <Files>
-      <File FileName="AerolineaTempa/ViewModels/UserProfile/DetailFlightViewModel.cs" Line="154" Column="4" />
-      <File FileName="AerolineaTempa/ViewModels/UserProfile/UserProfileViewModel.cs" />
-      <File FileName="AerolineaTempa.Android/MainActivity.cs" />
-      <File FileName="AerolineaTempa/App.xaml.cs" />
-      <File FileName="../../.nuget/packages/acr.userdialogs/7.2.0.534/readme.txt" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AerolineaTempa" expanded="True">
             <Node name="AerolineaTempa" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="RestService" expanded="True">
+                <Node name="Models" expanded="True" />
               </Node>
               <Node name="ViewModels" expanded="True">
-                <Node name="UserProfile" expanded="True">
-                  <Node name="DetailFlightViewModel.cs" selected="True" />
+                <Node name="Flight" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="HomeTempaViewModel.cs" selected="True" />
                 </Node>
+                <Node name="UserProfile" expanded="True" />
               </Node>
-            </Node>
-            <Node name="AerolineaTempa.Android" expanded="True">
-              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Flight" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="UserProfile" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.AerolineaTempa.Android AndroidDesignerPreferredTheme="MainTheme" Xamarin.HotReload.DebuggerTimeoutException.AerolineaTempa.Android.HideInfoBar="True" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.ItemProperties.AerolineaTempa.Android AndroidDesignerPreferredTheme="MainTheme" Xamarin.HotReload.DebuggerTimeoutException.AerolineaTempa.Android.HideInfoBar="True" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.9e8c44fb" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="143" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/HomeTempaViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/HomeTempaViewModel.cs" line="124" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="218" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="224" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="155" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="153" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="189" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="193" column="4" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="207" column="1" />
+      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="209" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

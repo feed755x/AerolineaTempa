@@ -1,11 +1,16 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AerolineaTempa.Helpers;
 using AerolineaTempa.Interfaces;
 using AerolineaTempa.Models;
 using AerolineaTempa.ViewModels.Base;
 using Microsoft.Extensions.DependencyInjection;
 using MvvmHelpers.Commands;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace AerolineaTempa.ViewModels.Home
@@ -16,12 +21,7 @@ namespace AerolineaTempa.ViewModels.Home
         public HomeTempaViewModel(INavigationService navigationService)
         {
             _navegationService = navigationService;
-            ListFlights.Clear();
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 32 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 32 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 32 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 32 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 0 });
+            GetAllFlights();
         }
 
         #region Services
@@ -70,14 +70,6 @@ namespace AerolineaTempa.ViewModels.Home
                 return new AsyncCommand(EditItem);
             }
         }
-
-        public ICommand DeleteItemCommand
-        {
-            get
-            {
-                return new AsyncCommand(DeleteItem);
-            }
-        }
         #endregion
 
         #region Methods
@@ -87,10 +79,8 @@ namespace AerolineaTempa.ViewModels.Home
 
             vmBuy.Aerolinea = "";
             vmBuy.Origen = "";
-            vmBuy.FechaSalida = "";
-            vmBuy.HoraSalida = "";
-            vmBuy.FechaLlegada = "";
-            vmBuy.HoraLlegada = "";
+            vmBuy.FechaSalida = DateTime.Now;
+            vmBuy.FechaLlegada = DateTime.Now;
             vmBuy.Destino = "";
             vmBuy.AsientosDisponibles = 0;
             vmBuy.PrecioAsiento = 0;
@@ -103,11 +93,11 @@ namespace AerolineaTempa.ViewModels.Home
             if (SelectedFlight != null)
             {
                 var vmBuy = Container.Current.Services.GetRequiredService<EditFlightViewModel>();
-
+                vmBuy.idVuelo = SelectedFlight.idVuelo;
                 vmBuy.Aerolinea = SelectedFlight.aerolinea;
                 vmBuy.Origen = SelectedFlight.origen;
-                vmBuy.FechaSalida = SelectedFlight.fechaSalida;
-                vmBuy.FechaLlegada = SelectedFlight.fechaLlegada;
+                vmBuy.FechaSalida = DateTime.Now;
+                vmBuy.FechaLlegada = DateTime.Now;
                 vmBuy.Destino = SelectedFlight.destino;
                 vmBuy.AsientosDisponibles = SelectedFlight.asientosDisponibles;
                 vmBuy.PrecioAsiento = SelectedFlight.precioAsiento;
@@ -117,8 +107,24 @@ namespace AerolineaTempa.ViewModels.Home
             }
         }
 
-        public async Task DeleteItem()
+        public async Task GetAllFlights()
         {
+            ListFlights.Clear();
+
+            try
+            {
+                string url = Constants.CONTS_URL_BASE_SERVICES+Constants.CONTS_CONTROLLER_ALL_FLIGHTS;
+                HttpClient client = new HttpClient();
+                var result = await client.GetStringAsync(url);
+
+                var response = JsonConvert.DeserializeObject<List<FlightModel>>(result);
+
+                ListFlights = new ObservableCollection<FlightModel>(response);
+            }
+            catch (Exception exception)
+            {
+                
+            }
 
         }
         #endregion

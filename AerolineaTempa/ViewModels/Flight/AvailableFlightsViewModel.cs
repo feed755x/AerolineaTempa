@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AerolineaTempa.Helpers;
 using AerolineaTempa.Interfaces;
 using AerolineaTempa.Models;
 using AerolineaTempa.ViewModels.Base;
 using Microsoft.Extensions.DependencyInjection;
 using MvvmHelpers.Commands;
+using Newtonsoft.Json;
 
 namespace AerolineaTempa.ViewModels.Flight
 {
@@ -15,13 +19,7 @@ namespace AerolineaTempa.ViewModels.Flight
         public AvailableFlightsViewModel(INavigationService navigationService)
         {
             _navegationService = navigationService;
-
-            ListFlights.Clear();
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 3 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 42 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 12 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 22 });
-            ListFlights.Add(new FlightModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosDisponibles = 2 });
+            GetFlights();
         }
 
         #region Services
@@ -71,6 +69,7 @@ namespace AerolineaTempa.ViewModels.Flight
             {
                 var vmBuy = Container.Current.Services.GetRequiredService<BuyFlightViewModel>();
 
+                vmBuy.idVuelo = SelectedFlight.idVuelo;
                 vmBuy.Aerolinea = SelectedFlight.aerolinea;
                 vmBuy.Origen = SelectedFlight.origen;
                 vmBuy.FechaSalida = SelectedFlight.fechaSalida;
@@ -86,6 +85,27 @@ namespace AerolineaTempa.ViewModels.Flight
 
                 SelectedFlight = null;
             }
+        }
+
+        public async Task GetFlights()
+        {
+            ListFlights.Clear();
+
+            try
+            {
+                string url = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_FLIGHTS;
+                HttpClient client = new HttpClient();
+                var result = await client.GetStringAsync(url);
+
+                var response = JsonConvert.DeserializeObject<List<FlightModel>>(result);
+
+                ListFlights = new ObservableCollection<FlightModel>(response);
+            }
+            catch (Exception exception)
+            {
+
+            }
+
         }
         #endregion
     }

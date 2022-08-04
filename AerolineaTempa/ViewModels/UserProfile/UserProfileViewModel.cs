@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AerolineaTempa.Helpers;
 using AerolineaTempa.Interfaces;
 using AerolineaTempa.Models;
 using AerolineaTempa.ViewModels.Base;
 using Microsoft.Extensions.DependencyInjection;
 using MvvmHelpers.Commands;
+using Newtonsoft.Json;
 
 namespace AerolineaTempa.ViewModels.UserProfile
 {
@@ -15,12 +19,7 @@ namespace AerolineaTempa.ViewModels.UserProfile
         public UserProfileViewModel(INavigationService navigationService)
         {
             _navegationService = navigationService;
-            ListFlights.Clear();
-            ListFlights.Add(new UserFlightsModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosComprados = 1, precioTotal = 212 });
-            ListFlights.Add(new UserFlightsModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosComprados = 2, precioTotal = 414 });
-            ListFlights.Add(new UserFlightsModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosComprados = 1, precioTotal = 212 });
-            ListFlights.Add(new UserFlightsModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosComprados = 1, precioTotal = 212 });
-            ListFlights.Add(new UserFlightsModel { icon = "ic_flight_world.png", aerolinea = "Volaris", origen = "CDMX", destino = "Acapulco", fechaSalida = "11:15 21 Ago", fechaLlegada = "03:30 22 Ago", asientosComprados = 1, precioTotal = 212 });
+            GetTrips();
         }
 
         #region Services
@@ -28,9 +27,9 @@ namespace AerolineaTempa.ViewModels.UserProfile
         #endregion
 
         #region Properties
-        private ObservableCollection<UserFlightsModel> _listFlights = new ObservableCollection<UserFlightsModel>();
+        private ObservableCollection<TripModel> _listFlights = new ObservableCollection<TripModel>();
 
-        public ObservableCollection<UserFlightsModel> ListFlights
+        public ObservableCollection<TripModel> ListFlights
         {
             get => _listFlights;
             set
@@ -40,9 +39,9 @@ namespace AerolineaTempa.ViewModels.UserProfile
             }
         }
 
-        private UserFlightsModel _selectedFlight;
+        private TripModel _selectedFlight;
 
-        public UserFlightsModel SelectedFlight
+        public TripModel SelectedFlight
         {
             get => _selectedFlight;
             set
@@ -69,18 +68,42 @@ namespace AerolineaTempa.ViewModels.UserProfile
             if (SelectedFlight != null)
             {
                 var vmBuy = Container.Current.Services.GetRequiredService<DetailFlightViewModel>();
+                vmBuy.idViaje = SelectedFlight.idViaje;
+                vmBuy.idVuelo = SelectedFlight.idVuelo.ToString();
                 vmBuy.SelectedFlight = SelectedFlight;
                 vmBuy.Aerolinea = SelectedFlight.aerolinea;
                 vmBuy.Origen = SelectedFlight.origen;
                 vmBuy.FechaSalida = SelectedFlight.fechaSalida;
                 vmBuy.Destino = SelectedFlight.destino;
                 vmBuy.FechaLlegada = SelectedFlight.fechaLlegada;
+                vmBuy.AsientosDisponibles = SelectedFlight.asientosDisponibles;
                 vmBuy.AsientosComprados = SelectedFlight.asientosComprados;
                 vmBuy.PrecioTotal = SelectedFlight.precioTotal;
 
                 await _navegationService.NavigateModalAsync("DetailFlight");
                 SelectedFlight = null;
             }
+        }
+
+        public async Task GetTrips()
+        {
+            ListFlights.Clear();
+
+            try
+            {
+                string url = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_TRIPS_GET;
+                HttpClient client = new HttpClient();
+                var result = await client.GetStringAsync(url);
+
+                var response = JsonConvert.DeserializeObject<List<TripModel>>(result);
+
+                ListFlights = new ObservableCollection<TripModel>(response);
+            }
+            catch (Exception exception)
+            {
+
+            }
+
         }
         #endregion
     }

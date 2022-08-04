@@ -42,6 +42,7 @@
     <None Remove="Servicios\" />
     <None Remove="RestService\" />
     <None Remove="Acr.UserDialogs" />
+    <None Remove="RestService\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -58,5 +59,6 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Servicios\" />
     <Folder Include="RestService\" />
+    <Folder Include="RestService\Models\" />
   </ItemGroup>
 </Project>

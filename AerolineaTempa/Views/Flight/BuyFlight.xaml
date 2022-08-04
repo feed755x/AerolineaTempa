@@ -199,7 +199,7 @@
                    VerticalOptions="Center"
                    VerticalTextAlignment="Center"/>
 
-            <Label Text="{Binding PrecioAsiento, StringFormat='{0:c2}'}"
+            <Label Text="{Binding TotalCobro, StringFormat='{0:c2}'}"
                    TextColor="{StaticResource Black}"
                    FontSize="15"
                    HorizontalOptions="End"

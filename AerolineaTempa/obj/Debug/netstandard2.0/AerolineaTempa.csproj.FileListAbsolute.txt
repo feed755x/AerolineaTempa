@@ -19,3 +19,4 @@
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.dll
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/ref/AerolineaTempa.dll
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.pdb
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/obj/Debug/netstandard2.0/AerolineaTempa.csproj.AssemblyReference.cache

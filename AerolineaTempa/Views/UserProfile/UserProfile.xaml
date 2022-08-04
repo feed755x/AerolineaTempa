@@ -97,13 +97,20 @@
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"/>
 
-                                <Label Text="{Binding fechaSalida}"
-                                       TextColor="{StaticResource DarkGrey}"
+                                <Label TextColor="{StaticResource DarkGrey}"
                                        FontSize="12"
                                        HorizontalOptions="StartAndExpand"
                                        HorizontalTextAlignment="Start"
                                        VerticalOptions="Center"
-                                       VerticalTextAlignment="Center"/>
+                                       VerticalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding horaSalida}"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding fechaSalida}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                              </StackLayout>
                             
                             <StackLayout Grid.Row="0"
@@ -118,13 +125,20 @@
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"/>
 
-                                <Label Text="{Binding fechaLlegada}"
-                                       TextColor="{StaticResource DarkGrey}"
+                                <Label TextColor="{StaticResource DarkGrey}"
                                        FontSize="12"
                                        HorizontalOptions="StartAndExpand"
                                        HorizontalTextAlignment="Start"
                                        VerticalOptions="Center"
-                                       VerticalTextAlignment="Center"/>
+                                       VerticalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding horaLlegada}"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding fechaLlegada}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                              </StackLayout>
 
                             <StackLayout Grid.Row="0"

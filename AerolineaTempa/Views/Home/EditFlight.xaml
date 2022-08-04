@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="AerolineaTempa.Views.Home.EditFlight"
     BackgroundColor="{StaticResource bg_Base}">
-    <StackLayout Margin="15">
+    <ScrollView Margin="15" VerticalScrollBarVisibility="Never">
+    <StackLayout Margin="0,0,0,20">
         <Label Text="Editar vuelo"
                TextColor="{StaticResource Black}"
                FontAttributes="Bold"
@@ -16,9 +17,184 @@
                Grid.Row="0"
                Grid.Column="0"/>
 
+        <Frame CornerRadius="6"
+               HasShadow="False"
+               BackgroundColor="{StaticResource White}"
+               Margin="0,10,0,30">
+            <StackLayout>
+        <Label Text="Agregar aerolinea"
+               TextColor="{StaticResource DarkGrey}"
+               FontSize="15"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Entry Text="{Binding Aerolinea}"
+               TextColor="{StaticResource Black}"
+               FontSize="15"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Keyboard="Text"
+               Margin="0,10,0,0"/>
+
+        <Label Text="Agregar origen"
+               TextColor="{StaticResource DarkGrey}"
+               FontSize="15"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Entry Text="{Binding Origen}"
+               TextColor="{StaticResource Black}"
+               FontSize="15"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Keyboard="Text"
+               Margin="0,10,0,0"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Start"
+                     Margin="0,10,0,0">
+            <Label Text="Fecha salida: "
+                   TextColor="{StaticResource DarkGrey}"
+                   FontSize="15"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   />
+
+            <DatePicker Date="{Binding FechaSalida}"
+                        TextColor="{StaticResource Black}"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        />
+
+            <Label Text="Hora salida: "
+                   TextColor="{StaticResource DarkGrey}"
+                   FontSize="15"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   />
+
+            <TimePicker Time="{Binding HoraSalida}"
+                        TextColor="{StaticResource Black}"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                       />
+        </StackLayout>
+
+        <Label Text="Agregar destino"
+               TextColor="{StaticResource DarkGrey}"
+               FontSize="15"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Entry Text="{Binding Destino}"
+               TextColor="{StaticResource Black}"
+               FontSize="15"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Keyboard="Text"
+               Margin="0,10,0,0"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Start"
+                     Margin="0,10,0,0">
+            <Label Text="Fecha llegada: "
+                   TextColor="{StaticResource DarkGrey}"
+                   FontSize="15"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   />
+
+            <DatePicker Date="{Binding FechaLlegada}"
+                        TextColor="{StaticResource Black}"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        />
+
+            <Label Text="Hora llegada: "
+                   TextColor="{StaticResource DarkGrey}"
+                   FontSize="15"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   />
+
+            <TimePicker Time="{Binding HoraLlegada}"
+                        TextColor="{StaticResource Black}"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                       />
+        </StackLayout>
+
+        <Label Text="Agregar asientos totales"
+               TextColor="{StaticResource DarkGrey}"
+               FontSize="15"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Entry Text="{Binding AsientosDisponibles}"
+               TextColor="{StaticResource Black}"
+               FontSize="15"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Keyboard="Numeric"
+               Margin="0,10,0,0"/>
+
+        <Label Text="Agregar precio por asiento"
+               TextColor="{StaticResource DarkGrey}"
+               FontSize="15"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Entry Text="{Binding PrecioAsiento}"
+               TextColor="{StaticResource Black}"
+               FontSize="15"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Keyboard="Numeric"
+               Margin="0,10,0,0"/>
+        </StackLayout>
+        </Frame>
+
+        <Button Command="{Binding DeleteItemCommand}"
+                StyleClass="buttonPrincipal"
+                Text="Eliminar vuelo"
+                VerticalOptions="EndAndExpand"/>
+
         <Button Command="{Binding SaveItemCommand}"
                 StyleClass="buttonPrincipal"
-                Text="Guardar"
+                Text="Guardar modificacion"
                 VerticalOptions="EndAndExpand"/>
     </StackLayout>
+        </ScrollView>
 </ContentPage>

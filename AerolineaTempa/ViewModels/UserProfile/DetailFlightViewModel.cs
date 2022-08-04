@@ -1,11 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
+using AerolineaTempa.Helpers;
 using AerolineaTempa.Interfaces;
 using AerolineaTempa.Models;
+using AerolineaTempa.RestService.Models;
 using AerolineaTempa.ViewModels.Base;
+using AerolineaTempa.ViewModels.Flight;
+using AerolineaTempa.ViewModels.Home;
 using Microsoft.Extensions.DependencyInjection;
 using MvvmHelpers.Commands;
+using Newtonsoft.Json;
 
 namespace AerolineaTempa.ViewModels.UserProfile
 {
@@ -20,14 +28,38 @@ namespace AerolineaTempa.ViewModels.UserProfile
         #endregion
 
         #region Properties
-        private UserFlightsModel _selectedFlight;
+        private TripModel _selectedFlight;
 
-        public UserFlightsModel SelectedFlight
+        public TripModel SelectedFlight
         {
             get => _selectedFlight;
             set
             {
                 _selectedFlight = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _idViaje;
+
+        public int idViaje
+        {
+            get => _idViaje;
+            set
+            {
+                _idViaje = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _idvuelo;
+
+        public string idVuelo
+        {
+            get => _idvuelo;
+            set
+            {
+                _idvuelo = value;
                 OnPropertyChanged();
             }
         }
@@ -128,6 +160,18 @@ namespace AerolineaTempa.ViewModels.UserProfile
             }
         }
 
+        private int _asientosDisponibles;
+
+        public int AsientosDisponibles
+        {
+            get => _asientosDisponibles;
+            set
+            {
+                _asientosDisponibles = value;
+                OnPropertyChanged();
+            }
+        }
+
         private double _precioTotal;
 
         public double PrecioTotal
@@ -156,14 +200,50 @@ namespace AerolineaTempa.ViewModels.UserProfile
         {
             if (true)
             {
-                UserDialogs.Instance.ShowLoading("Analizando");
+                UserDialogs.Instance.ShowLoading("Cargando");
 
-                var ListFlights = Container.Current.Services.GetRequiredService<UserProfileViewModel>().ListFlights;
-                ListFlights.Remove(SelectedFlight);
-                await Task.Delay(3000);
-                UserDialogs.Instance.HideLoading();
+                try
+                {
+                    
+                    DeleteTripRequest DeleteTrip = new DeleteTripRequest();
+                    DeleteTrip.isCanceled = 1;
+                    
+                    string urlDelete = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_DELETE_TRIP + idViaje.ToString();
+                    string urlUpdate = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_UPDATE_FLIGHT + idVuelo.ToString();
 
-                await _navegationService.GoBackPop();
+                    HttpClient client = new HttpClient();
+
+                    //Eliminar viaje del usuario
+                    string jsonData = JsonConvert.SerializeObject(DeleteTrip);
+                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync(urlDelete, content);
+                    string result = await response.Content.ReadAsStringAsync();
+
+                    await Container.Current.Services.GetRequiredService<UserProfileViewModel>().GetTrips();
+
+                    //Actualizar boletos disponibles del vuelo
+                    UpdatePlacesRequest UpdatePlace = new UpdatePlacesRequest();
+                    UpdatePlace.asientosDisponibles = AsientosDisponibles + AsientosComprados;
+
+                    string jsonData2 = JsonConvert.SerializeObject(UpdatePlace);
+                    StringContent content2 = new StringContent(jsonData2, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response2 = await client.PostAsync(urlUpdate, content2);
+
+                    string result2 = await response2.Content.ReadAsStringAsync();
+
+                    await Container.Current.Services.GetRequiredService<AvailableFlightsViewModel>().GetFlights();
+                    await Container.Current.Services.GetRequiredService<HomeTempaViewModel>().GetAllFlights();
+
+                    await Task.Delay(1000);
+                    UserDialogs.Instance.HideLoading();
+
+                    await _navegationService.GoBackPop();
+                }
+                catch (Exception exception)
+                {
+                    UserDialogs.Instance.HideLoading();
+                }
+
             }
             else
             {

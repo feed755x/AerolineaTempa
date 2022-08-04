@@ -1,9 +1,18 @@
 ﻿using System;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Acr.UserDialogs;
+using AerolineaTempa.Helpers;
 using AerolineaTempa.Interfaces;
+using AerolineaTempa.RestService.Models;
 using AerolineaTempa.ViewModels.Base;
+using AerolineaTempa.ViewModels.Home;
+using AerolineaTempa.ViewModels.UserProfile;
+using Microsoft.Extensions.DependencyInjection;
 using MvvmHelpers.Commands;
+using Newtonsoft.Json;
 
 namespace AerolineaTempa.ViewModels.Flight
 {
@@ -19,6 +28,18 @@ namespace AerolineaTempa.ViewModels.Flight
         #endregion
 
         #region Properties
+        private string _idvuelo;
+
+        public string idVuelo
+        {
+            get => _idvuelo;
+            set
+            {
+                _idvuelo = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _aerolinea;
 
         public string Aerolinea
@@ -149,7 +170,56 @@ namespace AerolineaTempa.ViewModels.Flight
         #region Methods
         public async Task BuyItem()
         {
-            await _navegationService.GoBackPop();
+            if (NumeroAsientos > 0)
+            {
+                UserDialogs.Instance.ShowLoading("Cargando");
+
+                try
+                {
+                    string url = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_UPDATE_FLIGHT + idVuelo.ToString();
+                    string urlAdd = Constants.CONTS_URL_BASE_SERVICES + Constants.CONTS_CONTROLLER_ADD_TRIP;
+                    HttpClient client = new HttpClient();
+                    //Se registra nuevo viaje
+                    AddTripRequest addTrip = new AddTripRequest();
+                    addTrip.idPasajero = 1;
+                    addTrip.idVuelo = Int32.Parse(idVuelo);
+                    addTrip.asientosComprados = NumeroAsientos;
+                    addTrip.precioTotal = ((int)TotalCobro);
+                    addTrip.isCanceled = 0;
+
+                    string jsonData2 = JsonConvert.SerializeObject(addTrip);
+                    StringContent content2 = new StringContent(jsonData2, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response2 = await client.PostAsync(urlAdd, content2);
+
+                    string result2 = await response2.Content.ReadAsStringAsync();
+
+                    //Se actualiza los vuelos con los asientos comprados
+                    UpdatePlacesRequest UpdatePlace = new UpdatePlacesRequest();
+                    UpdatePlace.asientosDisponibles = AsientosDisponibles;
+
+                    string jsonData = JsonConvert.SerializeObject(UpdatePlace);
+                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync(url, content);
+
+                    string result = await response.Content.ReadAsStringAsync();
+
+                    await Container.Current.Services.GetRequiredService<AvailableFlightsViewModel>().GetFlights();
+                    await Container.Current.Services.GetRequiredService<HomeTempaViewModel>().GetAllFlights();
+                    await Container.Current.Services.GetRequiredService<UserProfileViewModel>().GetTrips();
+
+                    UserDialogs.Instance.HideLoading();
+                    await _navegationService.GoBackPop();
+                }
+                catch (Exception exception)
+                {
+                    UserDialogs.Instance.HideLoading();
+                }
+
+            }
+            else
+            {
+                return;
+            }            
         }
 
         public async Task AddTicket()
@@ -163,7 +233,7 @@ namespace AerolineaTempa.ViewModels.Flight
             }
             else
             {
-
+                return;
             }
             
         }
