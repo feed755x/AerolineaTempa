@@ -1,5 +1,9 @@
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/AerolineaTempa.iOS.exe
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/AerolineaTempa.iOS.pdb
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/Acr.UserDialogs.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/Acr.UserDialogs.pdb
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/BTProgressHUD.dll
+/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/BTProgressHUD.pdb
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/Lottie.iOS.dll
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/Lottie.iOS.pdb
 /Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa.iOS/bin/iPhoneSimulator/Debug/Lottie.Forms.dll

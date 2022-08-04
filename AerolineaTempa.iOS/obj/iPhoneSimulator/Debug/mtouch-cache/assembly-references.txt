@@ -26,4 +26,6 @@
 /Users/federico.sanchez/.nuget/packages/xamarin.forms/5.0.0.2515/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
 /Users/federico.sanchez/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/federico.sanchez/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.0/lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll
+/Users/federico.sanchez/.nuget/packages/acr.userdialogs/7.2.0.534/lib/xamarinios10/Acr.UserDialogs.dll
+/Users/federico.sanchez/.nuget/packages/btprogresshud/1.3.4/lib/xamarinios10/BTProgressHUD.dll
 /Users/federico.sanchez/.nuget/packages/refractored.mvvmhelpers/1.6.2/lib/netstandard2.0/MvvmHelpers.dll
