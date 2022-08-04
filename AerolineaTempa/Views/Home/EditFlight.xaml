@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AerolineaTempa.Views.Home.EditFlight"
+    BackgroundColor="{StaticResource bg_Base}">
+    <StackLayout Margin="15">
+        <Label Text="Editar vuelo"
+               TextColor="{StaticResource Black}"
+               FontAttributes="Bold"
+               FontSize="20"
+               HorizontalOptions="StartAndExpand"
+               HorizontalTextAlignment="Start"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center"
+               Grid.Row="0"
+               Grid.Column="0"/>
+
+        <Button Command="{Binding SaveItemCommand}"
+                StyleClass="buttonPrincipal"
+                Text="Guardar"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>

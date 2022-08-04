@@ -16,10 +16,47 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.2.0.534" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Com.Airbnb.Xamarin.Forms.Lottie" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Microsoft.Net.Http" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Models\" />
+    <None Remove="Helpers\" />
+    <None Remove="Views\Profile\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Available\" />
+    <None Remove="ViewModels\Flight\" />
+    <None Remove="ViewModels\Home\" />
+    <None Remove="ViewModels\UserProfile\" />
+    <None Remove="ViewModels\Base\" />
+    <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="TinyIoC" />
+    <None Remove="Interfaces\" />
+    <None Remove="Refractored.MvvmHelpers" />
+    <None Remove="Servicios\" />
+    <None Remove="RestService\" />
+    <None Remove="Acr.UserDialogs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Views\UserProfile\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Flight\" />
+    <Folder Include="ViewModels\Flight\" />
+    <Folder Include="ViewModels\Home\" />
+    <Folder Include="ViewModels\UserProfile\" />
+    <Folder Include="ViewModels\Base\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Servicios\" />
+    <Folder Include="RestService\" />
   </ItemGroup>
 </Project>

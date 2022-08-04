@@ -1,4 +1,9 @@
+Acr.UserDialogs.dll
+AndHUD.dll
 FormsViewGroup.dll
+Lottie.Android.dll
+Lottie.Forms.dll
+Square.OkIO.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll
 Xamarin.AndroidX.Annotation.Experimental.dll
@@ -102,6 +107,3 @@ androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
-Lottie.Android.dll
-Lottie.Forms.dll
-Square.OkIO.dll

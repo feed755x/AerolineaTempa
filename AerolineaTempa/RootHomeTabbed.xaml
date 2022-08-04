@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="AerolineaTempa.RootHomeTabbed"
+            xmlns:tabbedbottm1="clr-namespace:AerolineaTempa.Views.Home"
+            xmlns:tabbedbottm2="clr-namespace:AerolineaTempa.Views.Flight"
+            xmlns:tabbedbottm3="clr-namespace:AerolineaTempa.Views.UserProfile"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#ffffff">
+    <tabbedbottm1:HomeTempa Title="Home" IconImageSource="ic_home.png"></tabbedbottm1:HomeTempa>
+    <tabbedbottm2:AvailableFlights Title="Flights" IconImageSource="ic_fllight.png"></tabbedbottm2:AvailableFlights>
+    <tabbedbottm3:UserProfile Title="Profile" IconImageSource="ic_profile.png"></tabbedbottm3:UserProfile>
+</TabbedPage>

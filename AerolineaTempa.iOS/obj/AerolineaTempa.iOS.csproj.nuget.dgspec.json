@@ -37,9 +37,17 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.2.0.534, )"
+            },
             "Com.Airbnb.Xamarin.Forms.Lottie": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.Net.Http": {
               "target": "Package",
@@ -107,9 +115,17 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.2.0.534, )"
+            },
             "Com.Airbnb.Xamarin.Forms.Lottie": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.Net.Http": {
               "target": "Package",
@@ -124,6 +140,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Refractored.MvvmHelpers": {
+              "target": "Package",
+              "version": "[1.6.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

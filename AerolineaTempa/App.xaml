@@ -3,6 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AerolineaTempa.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!--Background Colors-->
+            <Color x:Key="bg_Base">#edf0f5</Color>
 
+            <!--Colors-->
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="Black">#001E30</Color>
+            <Color x:Key="RichBlack">#161718</Color>
+            <Color x:Key="DarkGrey">#505258</Color>
+            <Color x:Key="MidGrey">#C4C5CA</Color>
+            <Color x:Key="LigthGrey">#DFE0E2</Color>
+            <Color x:Key="LightGrey">#DFE0E2</Color>
+            <Color x:Key="SoftGrey">#EFEFF0</Color>
+
+            <!--App Colors-->
+            <Color x:Key="TempaActionBlue">#288fee</Color>
+
+            <!--Buttons-->
+            <Style Class="buttonPrincipal" TargetType="Button">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList x:Name="CommonStates">
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor"                Value="{StaticResource White}" />
+                                <Setter Property="BackgroundColor"          Value="{StaticResource TempaActionBlue}" />
+                                <Setter Property="BorderWidth"              Value="0" />
+                                <Setter Property="FontSize"                 Value="15" />
+                                <Setter Property="CornerRadius"             Value="6" />
+                                <Setter Property="HorizontalOptions"        Value="FillAndExpand" />
+                                <Setter Property="HeightRequest"            Value="48" />
+                                <Setter Property="Opacity"                  Value="1.0" />
+                                <Setter Property="Margin"                   Value="0"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor"                Value="{StaticResource White}" />
+                                <Setter Property="BackgroundColor"          Value="{StaticResource TempaActionBlue}" />
+                                <Setter Property="BorderWidth"              Value="0" />
+                                <Setter Property="FontSize"                 Value="15" />
+                                <Setter Property="CornerRadius"             Value="6" />
+                                <Setter Property="HorizontalOptions"        Value="FillAndExpand" />
+                                <Setter Property="HeightRequest"            Value="48" />
+                                <Setter Property="Opacity"                  Value="0.7" />
+                                <Setter Property="Margin"                   Value="0"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor"                Value="{StaticResource White}" />
+                                <Setter Property="BackgroundColor"          Value="{StaticResource MidGrey}" />
+                                <Setter Property="BorderWidth"              Value="0" />
+                                <Setter Property="FontSize"                 Value="15" />
+                                <Setter Property="CornerRadius"             Value="6" />
+                                <Setter Property="HorizontalOptions"        Value="FillAndExpand" />
+                                <Setter Property="HeightRequest"            Value="48" />
+                                <Setter Property="Opacity"                  Value="1.0" />
+                                <Setter Property="Margin"                   Value="0"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
