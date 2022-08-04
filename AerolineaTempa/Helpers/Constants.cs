@@ -4,7 +4,7 @@ namespace AerolineaTempa.Helpers
     public static class Constants
     {
         #region URL BASE
-        public const string CONTS_URL_BASE_SERVICES = "https://e0e6-2806-2f0-92a1-a7e2-8b7e-b95e-c5d4-d03b.ngrok.io/hydra/api/";
+        public const string CONTS_URL_BASE_SERVICES = "http://34.170.16.83/hydra/api/";
         #endregion
 
         #region URL Controller

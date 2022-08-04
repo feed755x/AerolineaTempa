@@ -18,13 +18,16 @@ namespace AerolineaTempa.ViewModels.Flight
 {
     public class BuyFlightViewModel : BaseViewModel
     {
-        public BuyFlightViewModel(INavigationService navigationService)
+        public BuyFlightViewModel(INavigationService navigationService,
+                                  IMessageService messageService)
         {
             _navegationService = navigationService;
+            _messageService = messageService;
         }
 
         #region Services
         private INavigationService _navegationService;
+        private IMessageService _messageService;
         #endregion
 
         #region Properties
@@ -213,12 +216,12 @@ namespace AerolineaTempa.ViewModels.Flight
                 catch (Exception exception)
                 {
                     UserDialogs.Instance.HideLoading();
+                    await _messageService.Alert(exception.Message, "Informacion", "Aceptar");
                 }
-
             }
             else
             {
-                return;
+                await _messageService.Alert("Error al comprar asientos","Informacion","Aceptar");
             }            
         }
 
@@ -233,7 +236,7 @@ namespace AerolineaTempa.ViewModels.Flight
             }
             else
             {
-                return;
+                await _messageService.Alert("Sin asientos disponibles", "Informacion", "Aceptar");
             }
             
         }

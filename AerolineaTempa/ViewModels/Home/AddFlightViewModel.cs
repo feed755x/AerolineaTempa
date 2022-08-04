@@ -17,13 +17,16 @@ namespace AerolineaTempa.ViewModels.Home
 {
     public class AddFlightViewModel : BaseViewModel
     {
-        public AddFlightViewModel(INavigationService navigationService)
+        public AddFlightViewModel(INavigationService navigationService,
+                                  IMessageService messageService)
         {
             _navegationService = navigationService;
+            _messageService = messageService;
         }
 
         #region Services
         private INavigationService _navegationService;
+        private IMessageService _messageService;
         #endregion
 
         #region Properties
@@ -201,6 +204,7 @@ namespace AerolineaTempa.ViewModels.Home
                 catch (Exception exception)
                 {
                     UserDialogs.Instance.HideLoading();
+                    await _messageService.Alert(exception.Message, "Informacion", "Aceptar");
                 }
 
             }

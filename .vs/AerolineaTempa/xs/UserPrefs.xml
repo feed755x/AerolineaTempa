@@ -4,26 +4,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AerolineaTempa" expanded="True">
-            <Node name="AerolineaTempa" expanded="True">
-              <Node name="Helpers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="RestService" expanded="True">
-                <Node name="Models" expanded="True" />
-              </Node>
-              <Node name="ViewModels" expanded="True">
-                <Node name="Flight" expanded="True" />
-                <Node name="Home" expanded="True">
-                  <Node name="HomeTempaViewModel.cs" selected="True" />
-                </Node>
-                <Node name="UserProfile" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Flight" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="UserProfile" expanded="True" />
-              </Node>
-              <Node name="App.xaml" expanded="True" />
-            </Node>
+            <Node name="AerolineaTempa" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -33,17 +14,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/HomeTempaViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/HomeTempaViewModel.cs" line="124" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="218" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="224" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="155" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="153" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/AddFlightViewModel.cs" line="189" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="193" column="4" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="207" column="1" />
-      <Breakpoint file="/Users/federico.sanchez/Projects/AerolineaTempa/AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" relfile="AerolineaTempa/ViewModels/Home/EditFlightViewModel.cs" line="209" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

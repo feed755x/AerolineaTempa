@@ -16,8 +16,9 @@ namespace AerolineaTempa
             InitializeComponent();
             
             var services = new ServiceCollection();
-
+            
             services.AddSingleton<INavigationService, NavegationService>();
+            services.AddSingleton<IMessageService, MessageService>();
 
             services.AddSingleton<HomeTempaViewModel>();
             services.AddSingleton<AddFlightViewModel>();
